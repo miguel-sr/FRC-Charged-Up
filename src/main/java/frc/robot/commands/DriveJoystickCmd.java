@@ -56,7 +56,7 @@ public class DriveJoystickCmd extends CommandBase {
         if (leftTriggerFunction.get() != 0) {
             driveSubsystem.curvatureDrive(leftTriggerFunction.get() * xLimiter, turningSpdFunction.get() * turningLimiter, true);
         } else if (rightTriggerFunction.get() != 0) {
-            driveSubsystem.curvatureDrive(-rightTriggerFunction.get() * xLimiter, turningSpdFunction.get() * turningLimiter, true);
+            driveSubsystem.curvatureDrive(rightTriggerFunction.get() * xLimiter, turningSpdFunction.get() * turningLimiter, true);
         } else {
             driveSubsystem.curvatureDrive(0, 0 * turningLimiter, true);
         }
