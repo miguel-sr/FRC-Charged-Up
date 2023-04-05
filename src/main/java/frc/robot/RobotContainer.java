@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Constants.ArmConstants;
 import frc.robot.Constants.OIConstants;
-import frc.robot.commands.DriveJoystickCmd;
+import frc.robot.commands.DriveWithJoystick;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveSubsystem;
 
@@ -23,7 +23,7 @@ public class RobotContainer {
   private final Joystick armController = new Joystick(OIConstants.kArmControllerPort);
 
   public RobotContainer() {
-    driveSubsystem.setDefaultCommand(new DriveJoystickCmd(
+    driveSubsystem.setDefaultCommand(new DriveWithJoystick(
       driveSubsystem, 
       () -> driverJoystick.getRawAxis(OIConstants.Axis.kLeftTrigger), 
       () -> -driverJoystick.getRawAxis(OIConstants.Axis.kRightTrigger), 

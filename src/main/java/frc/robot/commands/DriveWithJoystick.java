@@ -6,13 +6,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.subsystems.DriveSubsystem;
 
-public class DriveJoystickCmd extends CommandBase {
+public class DriveWithJoystick extends CommandBase {
     private final DriveSubsystem driveSubsystem;
     private final Supplier<Double> leftTriggerFunction, rightTriggerFunction, turningSpdFunction;
     private final Supplier<Boolean> changeSpeedModeFunction;
     private String speedMode = "off";
 
-    public DriveJoystickCmd(DriveSubsystem driveSubsystem, Supplier<Double> leftTriggerFunction, Supplier<Double> rightTriggerFunction, 
+    public DriveWithJoystick(DriveSubsystem driveSubsystem, Supplier<Double> leftTriggerFunction, Supplier<Double> rightTriggerFunction, 
                             Supplier<Double> turningSpdFunction, Supplier<Boolean> changeSpeedModeFunction) {
 
         this.driveSubsystem = driveSubsystem;
