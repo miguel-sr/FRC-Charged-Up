@@ -52,6 +52,10 @@ public class RobotContainer {
         armSubsystem));
   }
 
+  public void disablePIDSubsystems() {
+    armSubsystem.disable();
+  }
+
   public Command getAutonomousCommand() {
     return null;
   }
