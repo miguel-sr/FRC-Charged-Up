@@ -1,5 +1,6 @@
 package frc.robot.commands;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants.DriveConstants;
@@ -29,13 +30,11 @@ public class RotateToAngle extends CommandBase {
         double output = 0;
 
         pid.setTolerance(DriveConstants.Gyro.kAngleTolerance);
-        output = pid.calculate(driveSubsystem.getAngle(), angle);
         
-        if (output > DriveConstants.Gyro.kMaxTurnOutput) {
-            output = DriveConstants.Gyro.kMaxTurnOutput;
-        } else if (output < -DriveConstants.Gyro.kMaxTurnOutput) {
-            output = -DriveConstants.Gyro.kMaxTurnOutput;
-        }
+        output = MathUtil.clamp(
+            pid.calculate(driveSubsystem.getAngle(), angle), 
+            -DriveConstants.Gyro.kMaxTurnOutput, 
+            DriveConstants.Gyro.kMaxTurnOutput);
 
         if (pid.atSetpoint()) {
             output = 0;
