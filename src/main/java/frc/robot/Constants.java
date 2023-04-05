@@ -19,6 +19,15 @@ public final class Constants {
     public static final int kRightFrontDriveMotorPort = 3;
     public static final int kRightRearDriveMotorPort = 4;
 
+    public static final class Encoders {
+      public static final int[] kLeftEncoderPorts = new int[] {1, 2};
+      public static final int[] kRightEncoderPorts = new int[] {5, 6};
+
+      private static final double kWheelDiameterMeters = 0.1524;
+      private static final double kPulsesPerRevolution = 2048;
+      public final static double kEncodersDistancePerPulse = (kWheelDiameterMeters * Math.PI) / kPulsesPerRevolution;
+    }
+    
     public static final double kYLowSpeedLimiter = 0.5;
     public static final double kTurningLowSpeedLimiter = 0.6;
     public static final double kYHighSpeedLimiter = 1.0;
