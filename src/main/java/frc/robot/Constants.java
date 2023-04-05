@@ -27,6 +27,12 @@ public final class Constants {
       private static final double kPulsesPerRevolution = 2048;
       public final static double kEncodersDistancePerPulse = (kWheelDiameterMeters * Math.PI) / kPulsesPerRevolution;
     }
+
+    public static final class Gyro {
+      public static final double kMaxTurnOutput = 0.8;
+      public static final double kAngleTolerance = 4;
+      public static final double kP = 0.1;
+    }
     
     public static final double kYLowSpeedLimiter = 0.5;
     public static final double kTurningLowSpeedLimiter = 0.6;
