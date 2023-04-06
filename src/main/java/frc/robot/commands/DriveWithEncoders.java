@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
 
 public class DriveWithEncoders extends CommandBase {
-  DriveSubsystem driveSubsystem;
+  private final DriveSubsystem driveSubsystem;
   private final double distance, speed;
 
   public DriveWithEncoders(DriveSubsystem driveSubsystem, double distance, double speed) {
