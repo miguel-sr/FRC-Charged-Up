@@ -83,6 +83,10 @@ public class DriveSubsystem extends SubsystemBase {
         return -gyro.getAngle();
     }
 
+    public float getPitch() {
+        return gyro.getPitch();
+    }
+
     public void curvatureDrive(double xSpeed, double zRotation, boolean isQuickTurn) {
         drive.curvatureDrive(xSpeed, zRotation, isQuickTurn);
     }
