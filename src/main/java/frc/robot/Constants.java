@@ -30,7 +30,8 @@ public final class Constants {
 
     public static final class Gyro {
       public static final double kMaxTurnOutput = 0.8;
-      public static final double kAngleTolerance = 4;
+      public static final double kMaxAutoBalanceOutput = 0.4;
+      public static final double kAngleTolerance = 2.0;
       public static final double kP = 0.1;
     }
     
