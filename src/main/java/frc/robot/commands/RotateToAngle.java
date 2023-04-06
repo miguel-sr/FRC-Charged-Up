@@ -7,8 +7,8 @@ import frc.robot.Constants.DriveConstants;
 import frc.robot.subsystems.DriveSubsystem;
 
 public class RotateToAngle extends CommandBase {
-    PIDController pid = new PIDController(DriveConstants.Gyro.kP, 0.0, 0.0);
-    DriveSubsystem driveSubsystem;
+    private final PIDController pid = new PIDController(DriveConstants.Gyro.kP, 0.0, 0.0);
+    private final DriveSubsystem driveSubsystem;
     private final double angle;
     private int m_stable_done;
 
