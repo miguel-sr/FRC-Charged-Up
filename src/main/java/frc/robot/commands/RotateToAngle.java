@@ -25,9 +25,10 @@ public class RotateToAngle extends CommandBase {
         m_stable_done = 0;
     }
 
+    double output = 0;
+
     @Override
     public void execute() {
-        double output = 0;
 
         pid.setTolerance(DriveConstants.Gyro.kAngleTolerance);
         
